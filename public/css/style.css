@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+	font-family: customFonts;
+	src: url(FjordOne-Regular.ttf);
+}
 
 :root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
+	--dark-color-a: #11141a;
+	--dark-color-b: #1a1f29;
+	--dark-gradient: linear-gradient(to right, #485461, #141921);
+	--light-gradient: linear-gradient(to right, #8B939A, #5B6467);
+	--light-color: #8B939A;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -15,9 +20,9 @@
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	background: var(--light-color);
+	font-family: customFonts;
+	font-size: 18px;
+	background: var(--dark-gradient);
 	margin: 20px;
 }
 
@@ -29,20 +34,45 @@ a {
 	text-decoration: none;
 }
 
+
+.header-image img{
+    height: 170px;
+    width: 165px;
+    justify-content: center;
+}
+
+.chat-logo img{
+    height: 100px;
+    width: 180px;
+    margin-left: 15px;
+}
 .btn {
 	cursor: pointer;
-	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	padding: 10px 15px;
+	background: var(--light-gradient);
+	color: #fff;
 	border: 0;
+	font-family: customFonts;
 	font-size: 17px;
+}
+
+.index-centered {
+  position: fixed; /* or absolute */
+  top: 15%;
+  left: 37%
+}
+
+.chat-centered {
+  position: fixed; /* or absolute */
+  top: 10%;
+  left: 20%;
 }
 
 /* Chat Page */
 
 .chat-container {
-	max-width: 1100px;
-	background: #fff;
+	width: 1100px;
+	background: var(--light-gradient);
 	margin: 30px auto;
 	overflow: hidden;
 }
@@ -71,6 +101,7 @@ a {
 }
 
 .chat-sidebar h2 {
+	font-family: customFonts;	
 	font-size: 20px;
 	background: rgba(0, 0, 0, 0.1);
 	padding: 10px;
@@ -87,7 +118,7 @@ a {
 
 .chat-messages {
 	padding: 30px;
-	max-height: 500px;
+	height: 400px;
 	overflow-y: scroll;
 }
 
@@ -100,6 +131,7 @@ a {
 }
 
 .chat-messages .message .meta {
+	font-family: customFonts;
 	font-size: 15px;
 	font-weight: bold;
 	color: var(--dark-color-b);
@@ -111,9 +143,17 @@ a {
 	color: #777;
 }
 
+.chat-container .btn {
+	text-align: center;
+	border-radius: 12px;
+	width: fit-content;
+	margin-left: 10px;
+}
+
 .chat-form-container {
 	padding: 20px 30px;
 	background-color: var(--dark-color-a);
+	justify-content: space-between;
 }
 
 .chat-form-container form {
@@ -121,17 +161,24 @@ a {
 }
 
 .chat-form-container input[type='text'] {
+	font-family: customFonts;
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
 	flex: 1;
 }
 
+.chat-form-container .btn {
+	text-align: center;
+	border-radius: 50%;
+	width: fit-content;
+}
+
 /* Join Page */
 .join-container {
-	max-width: 500px;
+	width: 500px;
 	margin: 80px auto;
-	color: #fff;
+	color: #8B939A;
 }
 
 .join-header {
@@ -161,22 +208,18 @@ a {
 }
 
 .join-main input[type='text'] {
+	font-family: customFonts;
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
 	width: 100%;
 }
 
-.join-main select {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
-}
 
 .join-main .btn {
 	margin-top: 20px;
-	width: 100%;
+	border-radius: 5px;
+	width: fit-content;
 }
 
 @media (max-width: 700px) {
@@ -187,4 +230,23 @@ a {
 	.chat-sidebar {
 		display: none;
 	}
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.index-box-shadow {
+  height: 422px;
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px 5px rgba(16,16,16,0.2);
+}
+
+.chat-box-shadow {
+  height: 613px;
+  width: 1100px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px 5px rgba(16,16,16,0.2);
 }
