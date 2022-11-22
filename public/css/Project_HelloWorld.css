@@ -125,7 +125,7 @@ a {
 .chat-messages .message {
 	padding: 10px;
 	margin-bottom: 15px;
-	background-color: var(--light-color);
+	background-color: rgb(197, 206, 211);
 	border-radius: 5px;
 	overflow-wrap: break-word;
 }
