@@ -1,3 +1,4 @@
 FROM redis
-CMD "redis-server"
-RUN "npm start"
+RUN yum install -y redis
+RUN service redis start
+CMD "npm start"
