@@ -1,4 +1,5 @@
-# This is Realtime chat web
+# HelloWorld Realtime chat web
+# This is cloud-based project
 
 ## Prerequisite
 1. redis-server
