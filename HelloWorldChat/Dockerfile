@@ -1,10 +1,11 @@
-FROM node:alpine
+FROM node:16-alpine
 
 WORKDIR /usr/src/app
 
-# Wildcard used to copy to container "package.json" AND "package-lock.json"
 COPY ./package*.json ./
+# Wildcard used to copy to container "package.json" AND "package-lock.json"
 RUN npm install
-COPY ./server.js ./
+
+COPY . .
 
 CMD ["npm","start"]
