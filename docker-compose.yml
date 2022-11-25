@@ -5,10 +5,9 @@ services:
   redis-server:
     # Use Docker Hub base image 'redis:alpine' 
     image: redis:alpine
-    ports:
-      - "6379:6379"
+    command: redis-server
   helloworldchat:
     restart: on-failure
     build: ./HelloWorldChat
     ports:
-      - '80:80'
+      - '80:3000'
