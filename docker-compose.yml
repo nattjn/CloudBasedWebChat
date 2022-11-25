@@ -1,0 +1,13 @@
+# version of docker-compose
+version: '3.9'
+# 'services' are equivalent to 'containers'
+services:
+  redis-server:
+    # Use Docker Hub base image 'redis:alpine' 
+    image: 'redis:alpine'
+  HelloWorldChat:
+    restart: on-failure
+    build: ./HelloWorldChat
+    # Specify an array of ports to map
+    ports:
+      - '80:3000'
