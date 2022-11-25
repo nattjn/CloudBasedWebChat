@@ -23,12 +23,16 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const botName = "HelloWorld Bot";
 
-(async () => {
-    pubClient = createClient({ url: "redis://127.0.0.1:6379" });
-    await pubClient.connect();
-    subClient = pubClient.duplicate();
-    io.adapter(createAdapter(pubClient, subClient));
-})();
+// (async () => {
+//     // pubClient = createClient({ url: "redis://127.0.0.1:6379" });
+//     pubClient = redis.createClient({
+//         port: '6379',
+//         host: 'redis'
+//     })
+//     await pubClient.connect();
+//     subClient = pubClient.duplicate();
+//     io.adapter(createAdapter(pubClient, subClient));
+// })();
 
 // Run when client connects
 io.on("connection", (socket) => {
@@ -82,6 +86,6 @@ io.on("connection", (socket) => {
     });
 });
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

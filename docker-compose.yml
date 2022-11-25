@@ -4,10 +4,11 @@ version: '3.9'
 services:
   redis-server:
     # Use Docker Hub base image 'redis:alpine' 
-    image: redis:alpine
-    command: redis-server
-  helloworldchat:
+    image: redis:latest
+    #command: redis-server
+  web:
+
     restart: on-failure
     build: ./HelloWorldChat
     ports:
-      - '80:3000'
+      - '3000:3000'
